@@ -66,7 +66,6 @@ export default function AdminDashboard() {
     price: 0,
     image: "",
     featured: false,
-    status: "active",
     order: 0
   });
   const [showProductModal, setShowProductModal] = useState(false);
@@ -93,7 +92,6 @@ export default function AdminDashboard() {
     category: "",
     image: "",
     featured: false,
-    status: "active",
     order: 0,
     icon: ""
   });
@@ -226,7 +224,7 @@ export default function AdminDashboard() {
       }
       setSuccessMsg("Product saved successfully");
       setShowProductModal(false);
-      setProductForm({ name: "", slug: "", description: "", shortDescription: "", category: "", price: 0, image: "", featured: false, status: "active", order: 0 });
+      setProductForm({ name: "", slug: "", description: "", shortDescription: "", category: "", price: 0, image: "", featured: false, order: 0 });
       setProductEditing(null);
       await loadProducts();
     } catch (err) {
@@ -255,7 +253,7 @@ export default function AdminDashboard() {
       setProductForm(item);
       setProductEditing(item._id);
     } else {
-      setProductForm({ name: "", slug: "", description: "", shortDescription: "", category: "", price: 0, image: "", featured: false, status: "active", order: 0 });
+      setProductForm({ name: "", slug: "", description: "", shortDescription: "", category: "", price: 0, image: "", featured: false, order: 0 });
       setProductEditing(null);
     }
     setShowProductModal(true);
@@ -348,7 +346,7 @@ export default function AdminDashboard() {
       }
       setSuccessMsg("Service saved successfully");
       setShowServiceModal(false);
-      setServiceForm({ name: "", slug: "", title: "", description: "", shortDescription: "", category: "", image: "", featured: false, status: "active", order: 0, icon: "" });
+      setServiceForm({ name: "", slug: "", title: "", description: "", shortDescription: "", category: "", image: "", featured: false, order: 0, icon: "" });
       setServiceEditing(null);
       await loadServices();
     } catch (err) {
@@ -377,7 +375,7 @@ export default function AdminDashboard() {
       setServiceForm(item);
       setServiceEditing(item._id);
     } else {
-      setServiceForm({ name: "", slug: "", title: "", description: "", shortDescription: "", category: "", image: "", featured: false, status: "active", order: 0, icon: "" });
+      setServiceForm({ name: "", slug: "", title: "", description: "", shortDescription: "", category: "", image: "", featured: false, order: 0, icon: "" });
       setServiceEditing(null);
     }
     setShowServiceModal(true);
@@ -638,7 +636,6 @@ export default function AdminDashboard() {
                       <tr>
                         <th>Name</th>
                         <th>Category</th>
-                        <th>Status</th>
                         <th>Featured</th>
                         <th>Order</th>
                         <th>Actions</th>
@@ -649,7 +646,6 @@ export default function AdminDashboard() {
                         <tr key={prod._id}>
                           <td>{prod.name}</td>
                           <td>{prod.category?.name || "—"}</td>
-                          <td><span className={`badge badge-${prod.status}`}>{prod.status}</span></td>
                           <td>{prod.featured ? "✓ Yes" : "No"}</td>
                           <td>{prod.order}</td>
                           <td>
@@ -754,13 +750,6 @@ export default function AdminDashboard() {
                         <label>Order:</label>
                         <input type="number" value={productForm.order} onChange={(e) => setProductForm({ ...productForm, order: Number(e.target.value) })} />
                       </div>
-                      <div className="form-group">
-                        <label>Status:</label>
-                        <select value={productForm.status} onChange={(e) => setProductForm({ ...productForm, status: e.target.value })}>
-                          <option value="active">Active</option>
-                          <option value="inactive">Inactive</option>
-                        </select>
-                      </div>
                     </div>
                     <div className="form-group-checks">
                       <label>
@@ -835,7 +824,6 @@ export default function AdminDashboard() {
                       <tr>
                         <th>Name</th>
                         <th>Category</th>
-                        <th>Status</th>
                         <th>Featured</th>
                         <th>Order</th>
                         <th>Actions</th>
@@ -846,7 +834,6 @@ export default function AdminDashboard() {
                         <tr key={svc._id}>
                           <td>{svc.name}</td>
                           <td>{svc.category?.name || "—"}</td>
-                          <td><span className={`badge badge-${svc.status}`}>{svc.status}</span></td>
                           <td>{svc.featured ? "✓ Yes" : "No"}</td>
                           <td>{svc.order}</td>
                           <td>
@@ -954,13 +941,6 @@ export default function AdminDashboard() {
                       <div className="form-group">
                         <label>Order:</label>
                         <input type="number" value={serviceForm.order} onChange={(e) => setServiceForm({ ...serviceForm, order: Number(e.target.value) })} />
-                      </div>
-                      <div className="form-group">
-                        <label>Status:</label>
-                        <select value={serviceForm.status} onChange={(e) => setServiceForm({ ...serviceForm, status: e.target.value })}>
-                          <option value="active">Active</option>
-                          <option value="inactive">Inactive</option>
-                        </select>
                       </div>
                     </div>
                     <div className="form-group-checks">

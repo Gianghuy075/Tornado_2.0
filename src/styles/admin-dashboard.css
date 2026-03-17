@@ -438,14 +438,17 @@
 }
 
 .btn-sm {
-  padding: 6px 12px;
-  font-size: 12px;
+  padding: 5px 8px;
+  font-size: 11px;
+  min-width: auto;
+  white-space: nowrap;
 }
 
 .btn-edit {
   background: #dbeafe;
   color: #1e40af;
   border-color: #bfdbfe;
+  flex: 0 1 auto;
 }
 
 .btn-edit:hover {
@@ -456,6 +459,7 @@
   background: #fee2e2;
   color: #dc2626;
   border-color: #fca5a5;
+  flex: 0 1 auto;
 }
 
 .btn-delete:hover {
@@ -467,7 +471,7 @@
   background: white;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
-  overflow: hidden;
+  overflow-x: auto;
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
 }
 
@@ -475,6 +479,7 @@
   width: 100%;
   border-collapse: collapse;
   font-size: 14px;
+  table-layout: fixed;
 }
 
 .admin-table thead {
@@ -488,7 +493,18 @@
   font-weight: 700;
   color: var(--blue-900);
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
+/* Column widths distribution */
+.admin-table thead th:nth-child(1) { width: 30%; }
+.admin-table thead th:nth-child(2) { width: 25%; }
+.admin-table thead th:nth-child(3) { width: 15%; }
+.admin-table thead th:nth-child(4) { width: 15%; }
+.admin-table thead th:nth-child(5) { width: 15%; }
+.admin-table thead th:nth-child(6) { width: 15%; }
+.admin-table thead th:last-child { width: 130px; }
 
 .admin-table tbody tr {
   border-bottom: 1px solid #e2e8f0;
@@ -502,11 +518,18 @@
 .admin-table tbody td {
   padding: 14px 16px;
   color: #334155;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  vertical-align: middle;
 }
 
 .admin-table tbody td:last-child {
   display: flex;
-  gap: 8px;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  padding: 12px 8px;
 }
 
 .empty-text,
