@@ -535,6 +535,46 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ===== WHY CHOOSE OUR PRODUCTS SECTION ===== */}
+      <section className="section why-choose-section">
+        <div className="container">
+          <h2 className="h2">Why Choose Our Products</h2>
+          <div className="benefits-grid" style={{ marginTop: "32px" }}>
+            <div className="benefit-card animate-left">
+              <div className="benefit-icon">
+                <i className="fa-solid fa-check-circle">✓</i>
+              </div>
+              <h3>Quality Assured</h3>
+              <p>All products meet international quality and safety standards</p>
+            </div>
+
+            <div className="benefit-card animate-left">
+              <div className="benefit-icon">
+                <i className="fa-solid fa-headset">🎧</i>
+              </div>
+              <h3>Expert Support</h3>
+              <p>Dedicated technical support team available 24/7</p>
+            </div>
+
+            <div className="benefit-card animate-left">
+              <div className="benefit-icon">
+                <i className="fa-solid fa-truck">🚚</i>
+              </div>
+              <h3>Fast Delivery</h3>
+              <p>Reliable shipping and logistics to your location</p>
+            </div>
+
+            <div className="benefit-card animate-left">
+              <div className="benefit-icon">
+                <i className="fa-solid fa-handshake">🤝</i>
+              </div>
+              <h3>Long-term Partnership</h3>
+              <p>Build lasting relationships with our service-oriented approach</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

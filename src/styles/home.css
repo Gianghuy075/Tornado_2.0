@@ -1265,3 +1265,97 @@ footer a {
     max-height: 350px;
   }
 }
+
+/* ===== WHY CHOOSE SECTION ===== */
+.why-choose-section {
+  padding: 80px 20px;
+  background: var(--soft);
+}
+
+.why-choose-section .h2 {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.why-choose-section .benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 28px;
+}
+
+.why-choose-section .benefit-card {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+  box-shadow: var(--shadow1);
+  transition: all var(--t);
+  border: 1px solid var(--line);
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-choose-section .benefit-card:hover {
+  box-shadow: var(--shadow2);
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+  border-color: var(--primary-hover);
+}
+
+.why-choose-section .benefit-card:hover h3,
+.why-choose-section .benefit-card:hover p {
+  color: white;
+}
+
+.why-choose-section .benefit-icon {
+  font-size: 42px;
+  color: var(--primary);
+  margin-bottom: 16px;
+  transition: color var(--t);
+}
+
+.why-choose-section .benefit-card:hover .benefit-icon {
+  color: white;
+}
+
+.why-choose-section .benefit-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text);
+  transition: color var(--t);
+}
+
+.why-choose-section .benefit-card p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+  transition: color var(--t);
+}
+
+/* Responsive for Why Choose section */
+@media (max-width: 768px) {
+  .why-choose-section {
+    padding: 60px 15px;
+  }
+
+  .why-choose-section .h2 {
+    font-size: 32px;
+  }
+
+  .why-choose-section .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .why-choose-section .benefit-card {
+    min-height: auto;
+    padding: 24px;
+  }
+}
