@@ -28,14 +28,13 @@
 header.site-header{
   position: static;
   width:100%;
-  background: transparent;
-  border-bottom: 1px solid rgba(255,255,255,.15);
-  backdrop-filter: blur(8px);
+  background: rgba(7, 17, 41, 0.98);
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  box-shadow: 0 4px 24px rgba(2,6,23,0.15);
   transition:
     box-shadow 0.3s ease,
     background 0.3s ease,
-    border-color 0.3s ease,
-    backdrop-filter 0.3s ease;
+    border-color 0.3s ease;
 }
 
 @keyframes slideDownHeader {
