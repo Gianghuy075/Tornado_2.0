@@ -30,16 +30,30 @@ export default function Header() {
     if (!header) {
       return;
     }
+
+    let ticking = false;
+
     const onScroll = () => {
-      const y = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
-      if (y > 10) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
+      const currentScrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          // Add scrolled class when scroll > 10px for background effect
+          if (currentScrollY > 10) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+
+          ticking = false;
+        });
+        ticking = true;
       }
     };
+
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+
     return () => {
       window.removeEventListener('scroll', onScroll);
     };
